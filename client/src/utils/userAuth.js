@@ -8,16 +8,13 @@ export default async function fetchData() {
     });
     const user = response.data;
     if (user) {
-      // dispatch(setUser(user));
-      // callback(user);
       return user;
     } else {
       console.log('Not login!');
-      window.location.href = '/auth/login';
+      window.location.href = '/login';
     }
   } catch (error) {
-    console.error(error);
-    console.log('Not login!');
-    window.location.href = '/auth/login';
+    console.error('Get me info error', error);
+    window.location.href = '/login';
   }
 }
